@@ -1,4 +1,4 @@
-FROM ubuntu:bionic
+FROM ubuntu:focal
 
 # gcc for cgo
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -136,4 +136,4 @@ ENTRYPOINT  echo "Building sensu-backend from $BACKEND_VERSION"; \
               -X "github.com/sensu/sensu-go/version.BuildDate=$(date +\%Y-\%m-\%d)" \
               -X "github.com/sensu/sensu-go/version.BuildSHA='`git rev-parse HEAD`'"'\
               -o bin/sensu-backend-$BACKEND_VERSION_NUMERIC ./cmd/sensu-backend; \
-            curl -vvv -w "HTTP return code: %{http_code}\n" --upload-file "bin/sensu-backend-$BACKEND_VERSION_NUMERIC" "$ARTIFACT_URL" -u "$ARTIFACT_USER_PASSWORD"
+            curl -w "HTTP return code: %{http_code}\n" --upload-file "bin/sensu-backend-$BACKEND_VERSION_NUMERIC" $ARTIFACT_URL -u "$ARTIFACT_USER_PASSWORD"
