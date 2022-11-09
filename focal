@@ -4,11 +4,17 @@ FROM ubuntu:focal
 RUN set -eux; \
 	apt-get update; \
 	apt-get install -y --no-install-recommends \
-		g++ \
-		gcc \
-		libc6-dev \
-		make \
-		pkg-config \
+	    g++ \
+	    gcc \
+	    libc6-dev \
+	    make \
+	    wget \
+	    pkg-config \
+	    ca-certificates \
+	    gpg gpg-agent \
+	    dirmngr \
+	    git \
+	    curl \
 	; \
 	rm -rf /var/lib/apt/lists/*
 
