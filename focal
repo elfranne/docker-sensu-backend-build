@@ -17,7 +17,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 ENV PATH /usr/local/go/bin:$PATH
 
-ENV GOLANG_VERSION 1.16.5
+ENV GOLANG_VERSION 1.18
 
 RUN set -eux; \
   \
