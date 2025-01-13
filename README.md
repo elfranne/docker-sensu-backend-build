@@ -1,4 +1,4 @@
-# sensu-backend buikd
+# sensu-backend build
 
 Docker container to build sensu-backend from source and uploads it on an artifact server ([docker-hub](https://hub.docker.com/repository/docker/elfranne/sensu-backend-build)):
 
